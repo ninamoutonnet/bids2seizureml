@@ -1,5 +1,7 @@
 # bids2seizureml
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24562253.svg)](https://doi.org/10.5281/zenodo.24562253)
+
 bids2seizureml prepares EEG seizure datasets stored in [EEG-BIDS](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/electroencephalography.html)
 for machine learning. It takes a dataset from its converted recordings to the PyTorch data loaders of
 each cross-validation fold, in four stages:
@@ -139,6 +141,23 @@ available and small. They expect the converted datasets in `data/` at the root o
 ```bash
 python -m pip install ".[test]"
 pytest
+```
+
+## Citation
+
+If you use bids2seizureml in your work, please cite it as:
+
+> Moutonnet, N. (2026). *bids2seizureml* [Software]. Zenodo. https://doi.org/10.5281/zenodo.24562253
+
+```bibtex
+@software{moutonnet_bids2seizureml,
+  author    = {Moutonnet, Nina},
+  title     = {bids2seizureml},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24562253},
+  url       = {https://doi.org/10.5281/zenodo.24562253}
+}
 ```
 
 ## Licence
