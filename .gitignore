@@ -1,0 +1,52 @@
+# Allow-list: everything at the top level is ignored, except the files and folders listed here.
+# Anything else in this folder (local notebooks, data and other files) stays private.
+/*
+!/.gitignore
+!/LICENSE
+!/MANIFEST.in
+!/README.md
+!/pyproject.toml
+!/src/
+!/tests/
+!/examples/
+
+# Never committed, even inside the folders above.
+
+# EEG data, preprocessed recordings and loader caches
+*.edf
+*.edf.gz
+*.bdf
+*.h5
+*.hdf5
+*.fif
+*.fif.gz
+*.npy
+*.pt
+derivatives/
+materialized_cache/
+loader_cache/
+
+# Figures and documents produced while running notebooks
+*.pdf
+
+# Tests of the unpublished experiments folder
+/tests/test_experiment*.py
+
+# Python caches, build artefacts and test reports
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Notebook checkpoints, environments and system files
+.ipynb_checkpoints/
+.venv/
+.env
+.env.*
+.DS_Store
+*.log

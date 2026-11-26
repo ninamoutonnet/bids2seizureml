@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bids2seizureml"
+version = "0.1.0"
+description = "Preprocessing, windowing, cross-validation folds and PyTorch data loaders for seizure detection on EEG-BIDS datasets."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    {name = "ninamoutonnet", email = "nm2318@ic.ac.uk"},
+]
+keywords = ["EEG", "BIDS", "epilepsy", "seizure detection", "machine learning"]
+dependencies = [
+    "edfio>=0.4.10",     # EDF export through MNE (EDF is the default output format).
+    "h5py>=3.8",
+    "mne>=1.7",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "pyedflib>=0.1.36",  # EDF header checks when combining datasets.
+    "torch>=2.0",
+    "tqdm>=4.64",
+]
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=12"]                                           # Per-recording tables saved as Parquet.
+examples = ["epilepsy2bids==0.0.7", "ipykernel", "matplotlib>=3.7"]  # The notebooks in examples/.
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["bids2seizureml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
