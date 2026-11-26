@@ -141,10 +141,6 @@ python -m pip install ".[test]"
 pytest
 ```
 
-## Citation
-
-Citation details will be added here.
-
 ## Licence
 
 Released under the MIT licence. See [LICENSE](LICENSE).
